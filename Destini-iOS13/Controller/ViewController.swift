@@ -10,11 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    @IBOutlet weak var storyLabel: UILabel!
+    @IBOutlet weak var choice1Button: UIButton!
+    @IBOutlet weak var choice2Button: UIButton!
+    
+    // MARK: - properties
+
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    // MARK: - IBActions
 
-
+    // MARK: - functions
+    
 }
 
