@@ -30,21 +30,32 @@ class ViewController: UIViewController {
             choices: ["Open it.", "Check for traps."]
         ),
     ]
+    var currentStoryNumber = 0
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storyLabel.text = stories[0].text
-        choice1Button.setTitle(stories[0].choices[0], for: .normal)
-        choice2Button.setTitle(stories[0].choices[1], for: .normal)
+        updateUI()
     }
     
     // MARK: - IBActions
     @IBAction func choiceMade(_ sender: UIButton) {
+        if sender.currentTitle == "Take a left." {
+            currentStoryNumber = 1
+        } else if sender.currentTitle == "Take a right." {
+            currentStoryNumber = 2
+        } else {
+            currentStoryNumber = 0
+        }
+        updateUI()
     }
-    
     // MARK: - functions
-    
+    func updateUI() {
+        let currentStory = stories[currentStoryNumber]
+        storyLabel.text = currentStory.text
+        choice1Button.setTitle(currentStory.choices[0], for: .normal)
+        choice2Button.setTitle(currentStory.choices[1], for: .normal)
+    }
 }
 
