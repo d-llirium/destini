@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+struct Story {
+    // MARK: - PROPERTIES
+    let text: String
+    let choices: [String]
+    
+    // MARK: - FUNCTIONS
+    init(text: String, choices: [String]) {
+        self.text = text
+        self.choices = choices
+    }
+}

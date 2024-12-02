@@ -16,17 +16,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice2Button: UIButton!
     
     // MARK: - properties
-    let story0 = "You see a fork in the road."
-    let choice1 = "Take a left."
-    let choice2 = "Take a right."
+    let stories = [
+        Story(
+            text: "You see a fork in the road.",
+            choices: ["Take a left.", "Take a right."]
+        ),
+        Story(
+            text: "You see a tiger.",
+            choices: ["Shout for help.", "Play dead."]
+        ),
+        Story(
+            text: "You seefound a treasure chest.",
+            choices: ["Open it.", "Check for traps."]
+        ),
+    ]
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storyLabel.text = story0
-        choice1Button.setTitle(choice1, for: .normal)
-        choice2Button.setTitle(choice2, for: .normal)
+        storyLabel.text = stories[0].text
+        choice1Button.setTitle(stories[0].choices[0], for: .normal)
+        choice2Button.setTitle(stories[0].choices[1], for: .normal)
     }
     
     // MARK: - IBActions
