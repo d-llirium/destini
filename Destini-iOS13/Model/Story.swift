@@ -10,12 +10,11 @@ import Foundation
 
 struct Story {
     // MARK: - PROPERTIES
-    let text: String
-    let choices: [String]
+    let title: String
+    let choice1: String
+    let choice1Destination: Int
+    let choice2: String
+    let choice2Destination: Int
     
     // MARK: - FUNCTIONS
-    init(text: String, choices: [String]) {
-        self.text = text
-        self.choices = choices
-    }
 }
