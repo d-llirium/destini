@@ -16,21 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice2Button: UIButton!
     
     // MARK: - properties
-    let stories = [
-        Story(
-            text: "You see a fork in the road.",
-            choices: ["Take a left.", "Take a right."]
-        ),
-        Story(
-            text: "You see a tiger.",
-            choices: ["Shout for help.", "Play dead."]
-        ),
-        Story(
-            text: "You seefound a treasure chest.",
-            choices: ["Open it.", "Check for traps."]
-        ),
-    ]
-    var currentStoryNumber = 0
+    var storyBrain = StoryBrain()
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -41,21 +27,14 @@ class ViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func choiceMade(_ sender: UIButton) {
-        if sender.currentTitle == "Take a left." {
-            currentStoryNumber = 1
-        } else if sender.currentTitle == "Take a right." {
-            currentStoryNumber = 2
-        } else {
-            currentStoryNumber = 0
-        }
+        storyBrain.nextStory(userChoice: sender.currentTitle!)
         updateUI()
     }
     // MARK: - functions
     func updateUI() {
-        let currentStory = stories[currentStoryNumber]
-        storyLabel.text = currentStory.text
-        choice1Button.setTitle(currentStory.choices[0], for: .normal)
-        choice2Button.setTitle(currentStory.choices[1], for: .normal)
+        storyLabel.text = storyBrain.getStoryText()
+        choice1Button.setTitle(storyBrain.getChoice1(), for: .normal)
+        choice2Button.setTitle(storyBrain.getChoice2(), for: .normal)
     }
 }
 
