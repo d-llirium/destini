@@ -11,36 +11,47 @@ import Foundation
 struct StoryBrain {
     // MARK: - PROPERTIES
     let stories = [
+        //0
         Story(
-          title: "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: 'Need a ride, boy?'.",
-          choice1: "I'll hop in. Thanks for the help!", choice1Destination: 2,
-          choice2: "Better ask him if he's a murderer first.", choice2Destination: 1
+          title: "You entered the restaurant and asked the hostes where your date is, and she points to a table where your high school crush is on, you...",
+          choice1: "Go to the bathroom to freshen up!", choice1Destination: 2,
+          choice2: "Walk strait to the table.", choice2Destination: 1
       ),
+        //1
       Story(
-          title: "He nods slowly, unfazed by the question.",
-          choice1: "At least he's honest. I'll climb in.", choice1Destination: 2,
-          choice2: "Wait, I know how to change a tire.", choice2Destination: 3
+          title: "When he sees you he opens a smile and gestures fo you to seat. You never thought you'd end up on blind date with him after 5 years. You guys place your orders. You",
+          choice1: "start a conversation.", choice1Destination: 3,
+          choice2: "wait for him to say something.", choice2Destination: 4
       ),
+        //2
       Story(
-          title: "As you begin to drive, the stranger starts talking about his relationship with his mother. He gets angrier and angrier by the minute. He asks you to open the glovebox. Inside you find a bloody knife, two severed fingers, and a cassette tape of Elton John. He reaches for the glove box.",
-          choice1: "I love Elton John! Hand him the cassette tape.", choice1Destination: 5,
-          choice2: "It's him or me! You take the knife and stab him.", choice2Destination: 4
+        title: "You are so nervous... that you don't see the waiter comming your way and before you know it, there is pizza sauce all over your outfit", choice1: "You call the date off and go home", choice1Destination: 5,
+          choice2: "You just go home.", choice2Destination: 6
       ),
+        //3
       Story(
-          title: "What? Such a cop out! Did you know traffic accidents are the second leading cause of accidental death for most adult age groups?",
+          title: "'So... Ted, what have you been doing all these years?' to what he answers 'Have we met before?'... Later, he remembers you, he just couldn't before because you changed a lot",
+          choice1: "'You are joking right?'", choice1Destination: 6,
+          choice2: "You are flattered", choice2Destination: 5
+      ),
+        //4
+        Story(
+            title: "'It's Ariel right!?, so... tell me a little abour yourself, where did you grow up?' you enter in panick mode... is he making fun of me? So you say...",
+            choice1: "'You are joking right?'", choice1Destination: 6,
+            choice2: "You answer him and pretend you've never met him before", choice2Destination: 6
+        ),
+        //5
+      Story(
+          title: "You guys schedule for next Friday. Good luck!",
           choice1: "The", choice1Destination: 0,
           choice2: "End", choice2Destination: 0
       ),
-      Story(
-          title: "As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in.",
-          choice1: "The", choice1Destination: 0,
-          choice2: "End", choice2Destination: 0
-      ),
-      Story(
-          title: "You bond with the murderer while crooning verses of 'Can you feel the love tonight'. He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: 'Try the pier.'",
-          choice1: "The", choice1Destination: 0,
-          choice2: "End", choice2Destination: 0
-      )   
+        //6
+        Story(
+            title: "You decide to never see him again!",
+            choice1: "The", choice1Destination: 0,
+            choice2: "End", choice2Destination: 0
+        )
     ]
     var storyNumber = 0
     
@@ -49,7 +60,7 @@ struct StoryBrain {
         if userChoice == stories[storyNumber].choice1 {
             storyNumber = stories[storyNumber].choice1Destination
         } else if userChoice == stories[storyNumber].choice2 {
-            storyNumber = stories[storyNumber].choice1Destination
+            storyNumber = stories[storyNumber].choice2Destination
         } else {
             storyNumber = 0
         }

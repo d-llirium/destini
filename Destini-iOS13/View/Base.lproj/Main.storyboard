@@ -17,9 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="LKf-K9-CEq">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfz-6f-Em8" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="LKf-K9-CEq">
+                                <rect key="frame" x="122" y="471.5" width="170.5" height="170.5"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Xv-Cl-yd3">
                                 <rect key="frame" x="30" y="48" width="354" height="814"/>
@@ -32,12 +36,13 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1z-UB-Ajg">
                                         <rect key="frame" x="0.0" y="594" width="354" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="LYy-Wa-12b"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button 1" backgroundImage="choice1Background">
+                                        <state key="normal" title="Button 1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -46,12 +51,13 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSC-Wa-oVk">
                                         <rect key="frame" x="0.0" y="714" width="354" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="EMp-Jt-VaH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button 2" backgroundImage="choice2Background">
+                                        <state key="normal" title="Button 2">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -59,14 +65,24 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="bIU-Wi-7pQ" firstAttribute="leading" secondItem="7Xv-Cl-yd3" secondAttribute="leading" id="cis-HH-EP7"/>
+                                    <constraint firstItem="bIU-Wi-7pQ" firstAttribute="top" secondItem="7Xv-Cl-yd3" secondAttribute="top" id="fe9-PJ-28l"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7Xv-Cl-yd3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1sI-Ny-97s"/>
-                            <constraint firstItem="7Xv-Cl-yd3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="LOj-5m-bqO"/>
+                            <constraint firstAttribute="top" secondItem="7Xv-Cl-yd3" secondAttribute="top" constant="-48" id="1sI-Ny-97s"/>
+                            <constraint firstAttribute="leading" secondItem="kfz-6f-Em8" secondAttribute="leading" id="1se-Fd-5gP"/>
+                            <constraint firstAttribute="centerX" secondItem="LKf-K9-CEq" secondAttribute="centerX" id="2Fl-8t-8VP"/>
+                            <constraint firstAttribute="bottom" secondItem="kfz-6f-Em8" secondAttribute="bottom" id="2e1-8S-egO"/>
+                            <constraint firstAttribute="trailing" secondItem="kfz-6f-Em8" secondAttribute="trailing" id="6sy-v2-zgc"/>
+                            <constraint firstAttribute="top" secondItem="kfz-6f-Em8" secondAttribute="top" id="Kde-XC-Z2w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="7Xv-Cl-yd3" secondAttribute="leading" constant="-30" id="LOj-5m-bqO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Xv-Cl-yd3" secondAttribute="bottom" id="gil-dU-XEB"/>
+                            <constraint firstItem="P1z-UB-Ajg" firstAttribute="top" secondItem="LKf-K9-CEq" secondAttribute="bottom" id="s92-EJ-E6d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Xv-Cl-yd3" secondAttribute="trailing" constant="30" id="wvD-4V-OdI"/>
                         </constraints>
                     </view>
@@ -82,11 +98,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="958" height="1793"/>
-        <image name="choice1Background" width="1370.5" height="363"/>
-        <image name="choice2Background" width="1370.5" height="363"/>
+        <image name="pizza" width="170.5" height="170.5"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

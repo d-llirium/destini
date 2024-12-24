@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpButtons()
         updateUI()
     }
     
@@ -35,6 +36,10 @@ class ViewController: UIViewController {
         storyLabel.text = storyBrain.getStoryText()
         choice1Button.setTitle(storyBrain.getChoice1(), for: .normal)
         choice2Button.setTitle(storyBrain.getChoice2(), for: .normal)
+    }
+    func setUpButtons() {
+        self.choice1Button.layer.cornerRadius = 20.0
+        self.choice2Button.layer.cornerRadius = 20.0
     }
 }
 
