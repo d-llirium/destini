@@ -1,4 +1,4 @@
-# Destini
+# destini
 
 ## [. iOS & Swift - The Complete iOS App Development Bootcamp >> Destini ](https://brq.udemy.com/course/ios-13-app-development-bootcamp/learn/lecture/16253100#questions)
 
@@ -10,4 +10,4 @@
 ### Xcode 16.0
 ### swift 5.0
 
-![Destini](https://github.com/d-llirium/Destini-iOS13/blob/main/gif.gif?raw=true)
+![destini](https://github.com/d-llirium/destini/blob/main/gif.gif?raw=true)
